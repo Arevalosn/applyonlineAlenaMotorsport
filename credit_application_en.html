@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showCoupon(event) {
+            event.preventDefault(); // Prevents page reload
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('coupon').style.display = 'block';
+        }
+
+        function closeCoupon() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('coupon').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header class="header-luminous">
+        <div class="header-overlay">
+            <img src="image.png.jpg" alt="ALENA MOTORSPORT">
+        </div>
+    </header>
+    <main>
+        <h1 class="main-title">Credit Application</h1>
+        <form onsubmit="showCoupon(event)">
+            <h2>Personal Information</h2>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="social">Social/ITIN</label>
+            <input type="text" id="social" name="social" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="license">Driver's License</label>
+            <input type="text" id="license" name="license" required>
+
+            <label for="address">Current Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="zip">Zip</label>
+            <input type="text" id="zip" name="zip" required>
+
+            <label for="ownership">Ownership</label>
+            <select id="ownership" name="ownership">
+                <option value="own">Own</option>
+                <option value="rent">Rent</option>
+            </select>
+
+            <h2>Employment Information</h2>
+            <label for="employer">Current Employer</label>
+            <input type="text" id="employer" name="employer" required>
+
+            <label for="employerAddress">Employer Address</label>
+            <input type="text" id="employerAddress" name="employerAddress" required>
+
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" name="occupation" required>
+
+            <label for="income">Monthly Income</label>
+            <input type="number" id="income" name="income" required>
+
+            <label for="incomeType">Income Type</label>
+            <select id="incomeType" name="incomeType">
+                <option value="w2">W2</option>
+                <option value="1099">1099</option>
+                <option value="self-employed">Self-Employed</option>
+            </select>
+
+            <h2>Vehicle Information</h2>
+            <label for="makeModel">Make & Model</label>
+            <input type="text" id="makeModel" name="makeModel" required>
+
+            <label for="vin">Last 6 of VIN</label>
+            <input type="text" id="vin" name="vin" required>
+
+            <label for="downPayment">Desired Down Payment</label>
+            <input type="number" id="downPayment" name="downPayment" required>
+
+            <label for="monthlyPayment">Desired Monthly Payment</label>
+            <input type="number" id="monthlyPayment" name="monthlyPayment" required>
+
+            <h2>Appointment</h2>
+            <label for="appointmentDate">Select Date</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Select Time</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <!-- Legal Text -->
+            <div class="legal-container">
+                <p class="legal-text">
+                    By clicking "Submit", I, the undersigned, (a) for the purpose of securing credit, certify the below representations to be correct; (b) authorize financial institutions, as they consider necessary and appropriate, to obtain consumer credit reports on me periodically and to gather employment history, and (c) understand that we, or any financial institution to whom this application is submitted, will retain this application whether or not it is approved, and that it is the applicant's responsibility to notify the creditor of any change of name, address, or employment. We and any financial institution to whom this application is submitted, may share certain non-public personal information about you with your authorization or as provided by law.
+
+                    I consent to be contacted by the dealer at any telephone number or Email I provide, including, without limitation, communications sent via text message to my cell phone or communications sent using an autodialer or prerecorded message. This acknowledgment constitutes my written consent to receive such communications. I have read and agree to the Privacy Policy of this dealer.
+                </p>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </main>
+
+    <div id="overlay" class="overlay" onclick="closeCoupon()"></div>
+    <div id="coupon" class="coupon">
+        <img src="Cupon_de_descuento.jpg" alt="Coupon">
+        <button class="close-coupon-btn" onclick="closeCoupon()">Close</button>
+    </div>
+</body>
+</html>

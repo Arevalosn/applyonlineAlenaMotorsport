@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Crédito</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showCoupon(event) {
+            event.preventDefault(); // Evita que la página se recargue
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('coupon').style.display = 'block';
+        }
+
+        function closeCoupon() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('coupon').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header class="header-luminous">
+        <div class="header-overlay">
+            <img src="image.png.jpg" alt="ALENA MOTORSPORT">
+        </div>
+    </header>
+    <main>
+        <h1 class="main-title">Solicitud de Crédito</h1>
+        <form onsubmit="showCoupon(event)">
+            <h2>Información Personal</h2>
+            <label for="fullName">Nombre Completo</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="dob">Fecha de Nacimiento</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="social">Social/ITIN</label>
+            <input type="text" id="social" name="social" required>
+
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="license">Licencia de Conducir</label>
+            <input type="text" id="license" name="license" required>
+
+            <label for="address">Dirección Actual</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">Ciudad</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="zip">Código Postal</label>
+            <input type="text" id="zip" name="zip" required>
+
+            <label for="ownership">Propietario/Inquilino</label>
+            <select id="ownership" name="ownership">
+                <option value="propietario">Propietario</option>
+                <option value="inquilino">Inquilino</option>
+            </select>
+
+            <h2>Información de Empleo</h2>
+            <label for="employer">Empleador Actual</label>
+            <input type="text" id="employer" name="employer" required>
+
+            <label for="employerAddress">Dirección del Empleador</label>
+            <input type="text" id="employerAddress" name="employerAddress" required>
+
+            <label for="occupation">Ocupación</label>
+            <input type="text" id="occupation" name="occupation" required>
+
+            <label for="income">Ingreso Mensual</label>
+            <input type="number" id="income" name="income" required>
+
+            <label for="incomeType">Tipo de Ingreso</label>
+            <select id="incomeType" name="incomeType">
+                <option value="w2">W2</option>
+                <option value="1099">1099</option>
+                <option value="autonomo">Autónomo</option>
+            </select>
+
+            <h2>Información del Vehículo</h2>
+            <label for="makeModel">Marca y Modelo</label>
+            <input type="text" id="makeModel" name="makeModel" required>
+
+            <label for="vin">Últimos 6 del VIN</label>
+            <input type="text" id="vin" name="vin" required>
+
+            <label for="downPayment">Pago Inicial Deseado</label>
+            <input type="number" id="downPayment" name="downPayment" required>
+
+            <label for="monthlyPayment">Pago Mensual Deseado</label>
+            <input type="number" id="monthlyPayment" name="monthlyPayment" required>
+
+            <h2>Cita</h2>
+            <label for="appointmentDate">Seleccionar Fecha</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Seleccionar Hora</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <!-- Texto Legal -->
+            <div class="legal-container">
+                <p class="legal-text">
+                    Al hacer clic en "Enviar", yo, el abajo firmante, (a) para el propósito de obtener crédito, certifico que las representaciones a continuación son correctas; (b) autorizo a las instituciones financieras, según consideren necesario y apropiado, a obtener informes de crédito sobre mí periódicamente y recopilar historial laboral, y (c) entiendo que nosotros, o cualquier institución financiera a la que se envíe esta solicitud, retendremos esta solicitud, ya sea que sea aprobada o no, y que es responsabilidad del solicitante notificar al acreedor sobre cualquier cambio de nombre, dirección o empleo. Nosotros y cualquier institución financiera a la que se envíe esta solicitud, podemos compartir cierta información personal no pública sobre usted con su autorización o según lo disponga la ley.
+
+                    Acepto ser contactado por el concesionario en cualquier número de teléfono o correo electrónico que proporcione, incluidos, entre otros, comunicaciones enviadas por mensaje de texto a mi teléfono celular o comunicaciones enviadas mediante un marcador automático o mensaje pregrabado. Este reconocimiento constituye mi consentimiento escrito para recibir dichas comunicaciones. He leído y acepto la Política de Privacidad de este concesionario.
+                </p>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Solicitud</button>
+        </form>
+    </main>
+
+    <div id="overlay" class="overlay" onclick="closeCoupon()"></div>
+    <div id="coupon" class="coupon">
+        <img src="Cupon_de_descuento.jpg" alt="Cupón de Descuento">
+        <button class="close-coupon-btn" onclick="closeCoupon()">Cerrar</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function redirectToLanguage(lang) {
+            if (lang === 'es') {
+                window.location.href = 'credit_application_es.html';
+            } else {
+                window.location.href = 'credit_application_en.html';
+            }
+        }
+
+        // Function to show the coupon
+        function showCoupon(event) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById('coupon').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Function to close the coupon
+        function closeCoupon() {
+            document.getElementById('coupon').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header class="header-luminous">
+        <div class="header-overlay">
+            <img src="image.png.jpg" alt="ALENA MOTORSPORT">
+        </div>
+    </header>
+    <main>
+        <div class="language-section">
+            <h1 class="main-title">Select Your Language</h1>
+            <div class="language-buttons">
+                <button class="language-btn pulse" onclick="redirectToLanguage('es')">Español</button>
+                <button class="language-btn pulse" onclick="redirectToLanguage('en')">English</button>
+            </div>
+        </div>
+    </main>
+    </main>
+
+    <!-- Coupon Overlay -->
+    <div id="overlay" class="overlay" onclick="closeCoupon()"></div>
+    <div id="coupon" class="coupon">
+        <img src="Cupon de descuento para clientes.jpg" alt="Cupón de Descuento">
+        <button onclick="closeCoupon()" class="close-coupon-btn">Cerrar</button>
+    </div>
+</body>
+</html>

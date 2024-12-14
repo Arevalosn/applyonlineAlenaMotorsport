@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('imagendefondodeportiva.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1f1f1;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+header img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: subtleGlow 3s infinite alternate;
+}
+
+@keyframes subtleGlow {
+    0% {
+        filter: drop-shadow(0 0 5px #ffffff);
+    }
+    100% {
+        filter: drop-shadow(0 0 10px #c0c0c0);
+    }
+}
+
+/* Language Section Styling for Index Page */
+.language-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo sombreado */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Sombra externa */
+    text-align: center;
+}
+
+.language-section .main-title {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #ffffff, 0 0 15px #808080, 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.language-section .language-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.language-section .language-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #333333, #555555);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.language-section .language-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #c0c0c0;
+}
+
+.language-section .language-btn.pulse {
+    animation: pulseEffect 2s infinite;
+}
+
+/* Pulse Effect Animation for Buttons */
+@keyframes pulseEffect {
+    0% {
+        box-shadow: 0 0 5px #ffffff;
+    }
+    50% {
+        box-shadow: 0 0 15px #ff4500;
+    }
+    100% {
+        box-shadow: 0 0 5px #ffffff;
+    }
+}
+
+/* Form Styling (Spanish and English Pages) */
+form {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #808080;
+}
+
+h2 {
+    color: #c0c0c0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #c0c0c0;
+    padding-bottom: 10px;
+}
+
+/* Labels and Inputs */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #c0c0c0;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #333333;
+    color: #f1f1f1;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Validation */
+input:valid, select:valid {
+    border-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00;
+}
+
+input:invalid, select:invalid {
+    border-color: #ff0000;
+    box-shadow: 0 0 8px #ff0000;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 12px #00ffff;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #333333, #808080);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #c0c0c0;
+}
+
+/* Coupon Styling */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+#coupon {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    max-width: 90%;
+    width: 400px;
+}
+
+#coupon img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-coupon-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.close-coupon-btn:hover {
+    background: #555555;
+    transform: scale(1.1);
+}
